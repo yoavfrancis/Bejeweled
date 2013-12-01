@@ -1,5 +1,5 @@
-#ifndef __GameTest_BoardModel_h__
-#define __GameTest_BoardModel_h__
+#ifndef __Bejeweled_BoardModel_h__
+#define __Bejeweled_BoardModel_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -10,7 +10,7 @@
 #include "Grid.h"
 #include "TileSequence.h"
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Represents the game board as a logical unit.
@@ -167,6 +167,6 @@ private:
     std::vector<TileSequence> m_matchingSequences;
 }; // class BoardModel
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_BoardModel_h__
+#endif // __Bejeweled_BoardModel_h__

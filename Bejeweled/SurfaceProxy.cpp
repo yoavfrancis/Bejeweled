@@ -6,7 +6,7 @@
 #include "SurfaceProxy.h"
 #include "GameException.h"
 
-namespace game {
+namespace bejeweled {
 
 using std::string;
 
@@ -61,4 +61,4 @@ Point SurfaceProxy::getImageDimensions(const string& path) {
     return std::make_pair(w,h);
 }
 
-} // namespace game
+} // namespace bejeweled

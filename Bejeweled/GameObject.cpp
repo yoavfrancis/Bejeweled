@@ -1,6 +1,6 @@
 #include "GameObject.h"
 
-namespace game {
+namespace bejeweled {
 
 GameObject::GameObject() 
 : m_dstSurface(NULL), m_originX(0), m_originY(0) 
@@ -23,4 +23,4 @@ void GameObject::setTargetSurface(SDL_Surface* target) {
     m_dstSurface = target;
 }
 
-} // namespace game
+} // namespace bejeweled

@@ -1,5 +1,5 @@
-#ifndef __GameTest_ResourceManager__
-#define __GameTest_ResourceManager__
+#ifndef __Bejeweled_ResourceManager__
+#define __Bejeweled_ResourceManager__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -10,7 +10,7 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 
-namespace game {
+namespace bejeweled {
 
 using std::string;
 
@@ -56,6 +56,6 @@ private:
 
 }; // class ResourceManager
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_ResourceManager__
+#endif // __Bejeweled_ResourceManager__

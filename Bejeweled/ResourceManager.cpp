@@ -5,7 +5,7 @@
 #include "GameException.h"
 
 
-namespace game {
+namespace bejeweled {
 
 using std::string;
 
@@ -45,5 +45,5 @@ TTF_Font* ResourceManager::loadFont(const string& path, int size) {
     return font;
 }
 
-} //namespace game
+} //namespace bejeweled
 

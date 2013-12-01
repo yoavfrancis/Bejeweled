@@ -1,5 +1,5 @@
-#ifndef __GameTest_GameBoard_h__
-#define __GameTest_GameBoard_h__
+#ifndef __Bejeweled_GameBoard_h__
+#define __Bejeweled_GameBoard_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -14,7 +14,7 @@
 #include "TileViewDrawer.h"
 #include "ResourceManager.h"
 
-namespace game {
+namespace bejeweled {
 
 using std::string;
 
@@ -78,6 +78,6 @@ private:
     Point m_selectedTile, m_prevSelectedTile;
 }; // class GameBoard
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_GameBoard_h__
+#endif // __Bejeweled_GameBoard_h__

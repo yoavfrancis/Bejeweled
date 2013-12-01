@@ -1,6 +1,6 @@
 #include "TileSequence.h"
 
-namespace game {
+namespace bejeweled {
 
 TileSequence::TileSequence(int typeId, TileSequence::Orientation orientation, int startRow, int startCol, int size) 
  : m_orientation(orientation), m_typeId(typeId), m_size(size), m_row(startRow), m_col(startCol)
@@ -43,4 +43,4 @@ int TileSequence::getStartCol() const {
     return m_col;
 }
 
-} // namespace game
+} // namespace bejeweled

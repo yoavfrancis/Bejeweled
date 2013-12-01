@@ -1,5 +1,5 @@
-#ifndef __GameTest_SurfaceProxy_h__
-#define __GameTest_SurfaceProxy_h__
+#ifndef __Bejeweled_SurfaceProxy_h__
+#define __Bejeweled_SurfaceProxy_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -10,7 +10,7 @@
 #include "SDL.h"
 #include "Point.h"
 
-namespace game {
+namespace bejeweled {
 
 using std::string;
 
@@ -54,6 +54,6 @@ private:
     SurfaceProxy& operator=(const SurfaceProxy&);
 }; // class SurfaceProxy
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_SurfaceProxy_h__
+#endif // __Bejeweled_SurfaceProxy_h__

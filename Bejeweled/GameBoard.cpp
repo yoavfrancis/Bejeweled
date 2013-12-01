@@ -1,7 +1,7 @@
 #include <utility>
 #include "GameBoard.h"
 
-namespace game {
+namespace bejeweled {
 
 const int GameBoard::NUM_ROWS = 8;
 const int GameBoard::NUM_COLS = 8;
@@ -159,4 +159,4 @@ GameBoard::BoardState GameBoard::getBoardState() const {
     return m_boardState;
 }
 
-} // namespace game
+} // namespace bejeweled

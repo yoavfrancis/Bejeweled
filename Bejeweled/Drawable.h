@@ -1,5 +1,5 @@
-#ifndef __GameTest_Drawable_h__
-#define __GameTest_Drawable_h__
+#ifndef __Bejeweled_Drawable_h__
+#define __Bejeweled_Drawable_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -7,7 +7,7 @@
 
 #include <SDL.h>
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Interface for drawable objects
@@ -21,8 +21,8 @@ public:
     virtual ~Drawable() {}
 }; // class Drawable
 
-} // namespace game
+} // namespace bejeweled
 
 
 
-#endif // __GameTest_Drawable_h__
+#endif // __Bejeweled_Drawable_h__

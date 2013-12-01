@@ -1,5 +1,5 @@
-#ifndef __GameTest_Grid_inl__
-#define __GameTest_Grid_inl__
+#ifndef __Bejeweled_Grid_inl__
+#define __Bejeweled_Grid_inl__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -7,7 +7,7 @@
 
 #include "Grid.h"
 
-namespace game {
+namespace bejeweled {
 
 template<class ValueType>
 Grid<ValueType>::Grid(int rows, int cols, const ValueType& initialValue) 
@@ -82,6 +82,6 @@ void swap(Grid<ValueType>& a, Grid<ValueType>&b) {
     swap(a.m_array, b.m_array);
 }
 
-} // namespace game
+} // namespace bejeweled
 
-#endif //__GameTest_Grid_inl__
+#endif //__Bejeweled_Grid_inl__

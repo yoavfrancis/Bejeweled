@@ -7,7 +7,7 @@
 #include "GameException.h"
 #include "GameScene.h"
 
-namespace game {
+namespace bejeweled {
 
 const int Engine::GAME_FPS = 10;
 const string Engine::WINDOW_TITLE = "Yoav Francis - Bejeweled";
@@ -91,4 +91,4 @@ void Engine::run() {
     SDL_Delay(2000);
 }
 
-} // namespace game
+} // namespace bejeweled

@@ -1,5 +1,5 @@
-#ifndef __GameTest_GameButton_h__
-#define __GameTest_GameButton_h__
+#ifndef __Bejeweled_GameButton_h__
+#define __Bejeweled_GameButton_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -12,7 +12,7 @@
 #include "ResourceManager.h"
 #include "Timer.h"
 
-namespace game {
+namespace bejeweled {
 
 using std::string;
 
@@ -92,6 +92,6 @@ private:
 
 }; // class GameButton
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_GameButton_h__
+#endif // __Bejeweled_GameButton_h__

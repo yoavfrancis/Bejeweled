@@ -1,5 +1,5 @@
-#ifndef __GameTest_BoardView_h__
-#define __GameTest_BoardView_h__
+#ifndef __Bejeweled_BoardView_h__
+#define __Bejeweled_BoardView_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -13,7 +13,7 @@
 #include "TileViewDrawer.h"
 #include "BoardModel.h"
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Represents the game board view as a drawable object.
@@ -73,6 +73,6 @@ private:
     int m_tileHeight, m_tileWidth;
 }; // class BoardView
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_BoardView_h__
+#endif // __Bejeweled_BoardView_h__

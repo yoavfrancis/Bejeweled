@@ -1,5 +1,5 @@
-#ifndef __GameTest_GameObject_h__
-#define __GameTest_GameObject_h__
+#ifndef __Bejeweled_GameObject_h__
+#define __Bejeweled_GameObject_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -9,7 +9,7 @@
 #include <utility>
 #include "Point.h"
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Interface for a game object that can update, draw, handleEvents.
@@ -46,6 +46,6 @@ protected:
     int m_originX, m_originY;
 }; // class GameObject 
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_GameObject_h__
+#endif // __Bejeweled_GameObject_h__

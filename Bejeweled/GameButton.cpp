@@ -4,7 +4,7 @@
 #include "GameException.h"
 #include "SurfaceProxy.h"
 
-namespace game {
+namespace bejeweled {
 
 // Initialize default values constants
 const int GameButton::FONT_SIZE = 28;
@@ -120,4 +120,4 @@ void GameButton::notifyNoMoves() {
     m_textOffsetX = TEXT_OFFSET_NOMOVES;
 }
 
-} //namespace game
+} //namespace bejeweled

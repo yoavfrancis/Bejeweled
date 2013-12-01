@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <SDL.h>
 
-namespace game {
+namespace bejeweled {
 
 TileViewDrawer::TileViewDrawer() {
     std::srand((unsigned int)std::time(0));
@@ -43,4 +43,4 @@ void TileViewDrawer::drawTile(SDL_Surface* dst, int x, int y, int id, int isSele
     }
 }
 
-} // namespace game
+} // namespace bejeweled

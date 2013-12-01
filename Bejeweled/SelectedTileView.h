@@ -1,5 +1,5 @@
-#ifndef __GameTest_SeletedTileView_h__
-#define __GameTest_SeletedTileView_h__
+#ifndef __Bejeweled_SeletedTileView_h__
+#define __Bejeweled_SeletedTileView_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -8,7 +8,7 @@
 #include <SDL.h>
 #include "TileView.h"
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Represents a (selected) drawable tile on the game board
@@ -49,6 +49,6 @@ private:
 
 }; // class SelectedTileView
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_SeletedTileView_h__
+#endif // __Bejeweled_SeletedTileView_h__

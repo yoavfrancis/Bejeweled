@@ -2,7 +2,7 @@
 #include "SelectedTileView.h"
 #include "GameException.h"
 
-namespace game {
+namespace bejeweled {
 
 SDL_Color SelectedTileView::TILE_BORDER_COLOR = {100,255,255};
 int SelectedTileView::TILE_BORDER_WIDTH = 3;
@@ -43,4 +43,4 @@ void SelectedTileView::draw(SDL_Surface* dst, int x, int y) const{
     }
 }
 
-} // namespace game
+} // namespace bejeweled

@@ -1,5 +1,5 @@
-#ifndef __GameTest_GameException_h__
-#define __GameTest_GameException_h__
+#ifndef __Bejeweled_GameException_h__
+#define __Bejeweled_GameException_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <string>
 
-namespace game {
+namespace bejeweled {
 
 using std::runtime_error;
 using std::string;
@@ -32,6 +32,6 @@ public:
     virtual ~GameException() throw();
 };
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_GameException_h__
+#endif // __Bejeweled_GameException_h__

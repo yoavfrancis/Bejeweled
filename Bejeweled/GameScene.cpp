@@ -4,7 +4,7 @@
 #include "SurfaceProxy.h"
 #include "GameException.h"
 
-namespace game {
+namespace bejeweled {
 
 const std::string GameScene::BACKGROUND_IMG = "resources\\Background.png";
  
@@ -73,4 +73,4 @@ bool GameScene::isPointInObject(int x, int y) const {
     return (x>=0 && y>=0);
 }
 
-} // namespace game
+} // namespace bejeweled

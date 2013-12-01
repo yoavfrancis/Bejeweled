@@ -2,8 +2,8 @@
 #include "Engine.h"
 #include "GameException.h"
 
-using game::Engine;
-using game::GameException;
+using bejeweled::Engine;
+using bejeweled::GameException;
 
 int main(int argc, char* argv[]) {
     try {

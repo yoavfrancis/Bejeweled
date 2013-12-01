@@ -1,7 +1,7 @@
 #include "Timer.h"
 #include <SDL.h>
 
-namespace game {
+namespace bejeweled {
 
 Timer::Timer() : m_startTicks(0), m_pausedTicks(0), m_paused(false), m_started(false) {  
 }
@@ -50,4 +50,4 @@ bool Timer::isPaused() const {
     return m_paused;
 }
 
-} //namespace game
+} //namespace bejeweled

@@ -1,5 +1,5 @@
-#ifndef __GameTest_GameScene_h__
-#define __GameTest_GameScene_h__
+#ifndef __Bejeweled_GameScene_h__
+#define __Bejeweled_GameScene_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -12,7 +12,7 @@
 #include "GameBoard.h"
 #include "GameObject.h"
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Represents the game scene itself.
@@ -61,6 +61,6 @@ private:
     GameButton* m_button;
 }; // class GameScene
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_GameScene_h__
+#endif // __Bejeweled_GameScene_h__

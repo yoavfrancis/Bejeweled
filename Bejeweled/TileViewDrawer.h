@@ -1,5 +1,5 @@
-#ifndef __GameTest_TileViewDrawer_h__
-#define __GameTest_TileViewDrawer_h__
+#ifndef __Bejeweled_TileViewDrawer_h__
+#define __Bejeweled_TileViewDrawer_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -10,7 +10,7 @@
 #include "TileView.h"
 #include "SelectedTileView.h"
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Manages existing tile views and images.
@@ -40,6 +40,6 @@ private:
 
 }; // class TileViewDrawer
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_TileViewDrawer_h__
+#endif // __Bejeweled_TileViewDrawer_h__

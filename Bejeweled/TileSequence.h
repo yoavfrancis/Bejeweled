@@ -1,11 +1,11 @@
-#ifndef __GameTest_TileSequence_h__
-#define __GameTest_TileSequence_h__
+#ifndef __Bejeweled_TileSequence_h__
+#define __Bejeweled_TileSequence_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Describes a sequence of tiles of the same color.
@@ -59,6 +59,6 @@ private:
     int m_row, m_col;
 }; // class TileSequence
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_TileSequence_h__
+#endif // __Bejeweled_TileSequence_h__

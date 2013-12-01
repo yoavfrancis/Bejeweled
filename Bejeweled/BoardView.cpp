@@ -4,7 +4,7 @@
 #include "GameObject.h"
 #include "Point.h"
 
-namespace game {
+namespace bejeweled {
 
 BoardView::BoardView(const BoardModel& model, const TileViewDrawer& tileDrawer,
                     int originX, int originY, int tileSize)
@@ -76,4 +76,4 @@ void BoardView::deselectAllTiles() {
     m_selectedTiles.clear();
 }
 
-} // namespace game
+} // namespace bejeweled

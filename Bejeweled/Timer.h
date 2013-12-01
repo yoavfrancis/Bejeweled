@@ -1,11 +1,11 @@
-#ifndef __GameTest_Timer_h__
-#define __GameTest_Timer_h__
+#ifndef __Bejeweled_Timer_h__
+#define __Bejeweled_Timer_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Describes a game timer. Inspired by Lazyfoo.net
@@ -41,6 +41,6 @@ private:
     bool m_started;
 }; // class Timer
 
-} // namespace game
+} // namespace bejeweled
 
-#endif // __GameTest_Timer_h__
+#endif // __Bejeweled_Timer_h__

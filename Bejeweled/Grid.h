@@ -1,5 +1,5 @@
-#ifndef __GameTest_Grid_h__
-#define __GameTest_Grid_h__
+#ifndef __Bejeweled_Grid_h__
+#define __Bejeweled_Grid_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
 #pragma once
@@ -7,7 +7,7 @@
 
 #include <vector>
 
-namespace game {
+namespace bejeweled {
 
 /**
  * Mimics A 2d grid representation of a 1d vector for efficiency.
@@ -50,9 +50,9 @@ private:
     std::vector<ValueType> m_array;
 }; // class Grid
 
-} // namespace game
+} // namespace bejeweled
 
 // Template functions implementations
 #include "Grid.inl"
 
-#endif // __GameTest_Grid_h__
+#endif // __Bejeweled_Grid_h__

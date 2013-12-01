@@ -3,7 +3,7 @@
 #include "GameException.h"
 #include "SurfaceProxy.h"
 
-namespace game {
+namespace bejeweled {
 
 TileView::TileView(SDL_Surface* tileImg) 
 : m_tileImg(tileImg), m_isEmpty(false) {
@@ -44,4 +44,4 @@ int TileView::getHeight() const {
     return m_tileImg->h;
 }
 
-} // namespace game
+} // namespace bejeweled
