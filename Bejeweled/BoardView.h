@@ -10,7 +10,7 @@
 #include "Point.h"
 #include "Drawable.h"
 #include "TileView.h"
-#include "TileViewFactory.h"
+#include "TileViewDrawer.h"
 #include "BoardModel.h"
 
 namespace game {
@@ -28,14 +28,14 @@ public:
      * Constructor - receives a reference to the model and to the tile provider.
      * Also receives the tile size (as it is a square tile).
      */
-    BoardView(const BoardModel& model, const TileViewFactory& tileProvider,
+    BoardView(const BoardModel& model, const TileViewDrawer& tileProvider,
               int originX, int originY, int tileSize);
 
     /// Destructor - does nothing
     virtual ~BoardView();
 
     /// Draws the board on the given surface.
-    virtual void draw(SDL_Surface* dst) const;
+    virtual void draw(SDL_Surface* dst, int x=0, int y=0) const;
 
     /// get object in position
     bool isTileAtCoordinate(int x, int y) const;
@@ -59,7 +59,7 @@ private:
     BoardView& operator=(const BoardView&);
 
     const BoardModel& m_boardModel;
-    const TileViewFactory& m_tileProvider;
+    const TileViewDrawer& m_tileDrawer;
 
     /// BoardView dimensions
     int m_numCols, m_numRows;
@@ -67,6 +67,7 @@ private:
     /// Origin axis of the board
     int m_originX, m_originY;
 
+	/// Mapping of locations on the grid to the tile being "selected"
     std::map<Point, bool> m_selectedTiles;
 
     int m_tileHeight, m_tileWidth;

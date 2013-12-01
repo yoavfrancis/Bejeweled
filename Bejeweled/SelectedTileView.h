@@ -18,11 +18,9 @@ class SelectedTileView : public TileView
 public:
 	/**
      * Constructor
-     * @param x Horizontal origin point
-     * @param y Vertical origin point
      * @param tileImg is the source surface of the tile. It is NOT to be freed by this class.
      */ 
-	SelectedTileView(int x, int y, SDL_Surface* tileImg);
+	SelectedTileView(SDL_Surface* tileImg);
 
     /// Empty ctor for empty tile
     SelectedTileView();
@@ -36,8 +34,12 @@ public:
 	/// Destructor
 	virtual ~SelectedTileView();
 
-    /// Draws the tile on the given positions
-    virtual void draw(SDL_Surface* dst) const;
+    /**
+	 * Draws the tile on the given positions
+	 * @param x Horizontal origin point
+	 * @param y Vertical origin point
+     */
+    virtual void draw(SDL_Surface* dst, int x, int y) const;
 
 private:
 

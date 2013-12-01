@@ -6,10 +6,10 @@
 
 namespace game {
 
-BoardView::BoardView(const BoardModel& model, const TileViewFactory& tileProvider,
+BoardView::BoardView(const BoardModel& model, const TileViewDrawer& tileDrawer,
                     int originX, int originY, int tileSize)
 : m_boardModel(model), 
-  m_tileProvider(tileProvider),
+  m_tileDrawer(tileDrawer),
   m_originX(originX), m_originY(originY),
   m_tileHeight(tileSize), m_tileWidth(tileSize),
   m_numRows(m_boardModel.getNumRows()), m_numCols(m_boardModel.getNumColumns())
@@ -18,23 +18,19 @@ BoardView::BoardView(const BoardModel& model, const TileViewFactory& tileProvide
 BoardView::~BoardView() {
 }
 
-void BoardView::draw(SDL_Surface* dst) const{
-    for(int j=0; j<m_numCols; ++j) {
+void BoardView::draw(SDL_Surface* dst, int x, int y) const {
+	for(int j=0; j<m_numCols; ++j) {
         for(int i=0; i<m_numRows; ++i) {
-                TileView* tile = m_tileProvider.provideTileById(m_originX + j*m_tileWidth, 
-                                                                m_originY + i*m_tileHeight,
-                                                                m_boardModel.getTileId(i, j),
-                                                                isTileSelected(i,j));
-                if(!tile) {
-                    throw GameException();
-                }
-                tile->draw(dst);
-                delete tile;
+			m_tileDrawer.drawTile(dst,
+								  m_originX + j*m_tileWidth,
+								  m_originY + i*m_tileHeight,
+								  m_boardModel.getTileId(i, j),
+								  isTileSelected(i,j));
         }
     }
 }
 
-int BoardView::getTileRowByY(int y) const{
+int BoardView::getTileRowByY(int y) const {
     if(m_tileHeight <= 0) {
         return TILE_NOT_FOUND;
     }
@@ -68,7 +64,7 @@ void BoardView::setTileDeselected(int row, int col) {
     m_selectedTiles.erase(std::make_pair(row, col));    
 }
 
-bool BoardView::isTileSelected(int row, int col) const{
+bool BoardView::isTileSelected(int row, int col) const {
     Point location = std::make_pair(row, col);
     if(m_selectedTiles.count(location) == 0) {
         return false;

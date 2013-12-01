@@ -15,7 +15,7 @@ namespace game {
 class Drawable
 {
 public:
-    virtual void draw(SDL_Surface* dst) const = 0;
+    virtual void draw(SDL_Surface* dst, int x, int y) const = 0;
 
     /// Destructor
     virtual ~Drawable() {}

@@ -21,7 +21,7 @@ const int GameButton::BUTTON_SIZE_X = 170;
 const int GameButton::BUTTON_SIZE_Y = 60;
 const SDL_Color GameButton::TIMER_TEXT_COLOR = {255, 255, 255};
 const SDL_Color GameButton::BUTTON_BACKCOLOR = {0, 100, 100};
-const float GameButton::GAME_TIME_SECS = 60.0f;
+const float GameButton::GAME_TIME_SECS = 10.0f;
 
 GameButton::~GameButton() {
     SDL_FreeSurface(m_fontSurface);

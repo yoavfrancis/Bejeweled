@@ -41,13 +41,13 @@
     <ClCompile Include="SelectedTileView.cpp">
       <Filter>Source Files\View</Filter>
     </ClCompile>
-    <ClCompile Include="TileViewFactory.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
     <ClCompile Include="TileView.cpp">
       <Filter>Source Files\View</Filter>
     </ClCompile>
     <ClCompile Include="BoardView.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="TileViewDrawer.cpp">
       <Filter>Source Files\View</Filter>
     </ClCompile>
   </ItemGroup>
@@ -100,11 +100,11 @@
     <ClInclude Include="TileView.h">
       <Filter>Header Files\View</Filter>
     </ClInclude>
-    <ClInclude Include="TileViewFactory.h">
-      <Filter>Header Files\View</Filter>
-    </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="TileViewDrawer.h">
+      <Filter>Header Files\View</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

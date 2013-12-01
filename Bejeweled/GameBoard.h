@@ -11,7 +11,7 @@
 #include "Point.h"
 #include "BoardView.h"
 #include "BoardModel.h"
-#include "TileViewFactory.h"
+#include "TileViewDrawer.h"
 #include "ResourceManager.h"
 
 namespace game {
@@ -71,7 +71,7 @@ private:
     GameBoard& operator=(const GameBoard&);
 
     BoardState m_boardState;
-    TileViewFactory m_tileProvider;
+    TileViewDrawer m_tileDrawer;
     BoardModel m_boardModel; /// Model MUST appear before the view in this class. (Initialization order)
     BoardView m_boardView;
     ResourceManager m_resManager;

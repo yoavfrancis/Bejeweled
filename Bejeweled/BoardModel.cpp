@@ -206,7 +206,7 @@ bool BoardModel::dropNewTilesRow() {
     return dropped;
 }
 
-bool BoardModel::swapTiles( int row1, int col1, int row2, int col2 ) {
+bool BoardModel::swapTiles(int row1, int col1, int row2, int col2) {
     if((col1 == col2 && (row1 == row2-1 || row1 == row2+1)) ||
         (row1 == row2 && (col1 == col2-1 || col1 == col2+1)))
     {

@@ -89,7 +89,7 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SurfaceProxy.h" />
     <ClInclude Include="TileView.h" />
-    <ClInclude Include="TileViewFactory.h" />
+    <ClInclude Include="TileViewDrawer.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +108,7 @@
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SurfaceProxy.cpp" />
     <ClCompile Include="TileView.cpp" />
-    <ClCompile Include="TileViewFactory.cpp" />
+    <ClCompile Include="TileViewDrawer.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>

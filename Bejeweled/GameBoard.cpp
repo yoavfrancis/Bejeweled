@@ -18,15 +18,15 @@ GameBoard::GameBoard(int tileSize)
 : GameObject(),
   m_boardState(UNINITIALIZED), 
   m_boardModel(NUM_ROWS, NUM_COLS, NUM_COLORS),
-  m_boardView(m_boardModel, m_tileProvider, BOARD_OFFSET_X, BOARD_OFFSET_Y, tileSize),
+  m_boardView(m_boardModel, m_tileDrawer, BOARD_OFFSET_X, BOARD_OFFSET_Y, tileSize),
   m_selectedTile(-1, -1),
   m_prevSelectedTile(-1, -1)
 {
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_BLUE_IMG));
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_GREEN_IMG));
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_PURPLE_IMG));
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_RED_IMG));
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_YELLOW_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_BLUE_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_GREEN_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_PURPLE_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_RED_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_YELLOW_IMG));
     
     m_boardModel.fillBoard(); // /// Initialize the model with random tiles
     m_boardState = FREEZE;
@@ -36,17 +36,17 @@ GameBoard::GameBoard(int x, int y, SDL_Surface* target, int tileSize)
 : GameObject(x, y, target),
   m_boardState(UNINITIALIZED),
   m_boardModel(NUM_ROWS, NUM_COLS, NUM_COLORS),
-  m_boardView(m_boardModel, m_tileProvider, BOARD_OFFSET_X, BOARD_OFFSET_Y, tileSize),
+  m_boardView(m_boardModel, m_tileDrawer, BOARD_OFFSET_X, BOARD_OFFSET_Y, tileSize),
   m_selectedTile(-1, -1),
   m_prevSelectedTile(-1, -1)
 {
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_BLUE_IMG));
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_GREEN_IMG));
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_PURPLE_IMG));
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_RED_IMG));
-    m_tileProvider.addAvailableTileImage(m_resManager.loadImage(TILE_YELLOW_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_BLUE_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_GREEN_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_PURPLE_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_RED_IMG));
+    m_tileDrawer.addAvailableTileImage(m_resManager.loadImage(TILE_YELLOW_IMG));
 
-    m_boardModel.fillBoard(); // /// Initialize the model with random tiles
+    m_boardModel.fillBoard(); // Initialize the model with random tiles
     m_boardState = FREEZE;
 }
 
@@ -57,7 +57,7 @@ void GameBoard::handleEvent(SDL_Event* event) {
     // No need to make sure that this is a left-click event,  as the GameScene checks that.
     int x = event->button.x;
     int y = event->button.y;
-    /// Receive input only when board is ready or when one tile is selected.
+    // Receive input only when board is ready or when one tile is selected.
     if(m_boardState == READY || m_boardState ==  WAIT_SELECT2) {
         // Board is ready to be clicked, and there are less than 2 selected tiles.
         if(m_boardView.isTileAtCoordinate(x, y)) {
