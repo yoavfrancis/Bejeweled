@@ -60,11 +60,11 @@ And thus we must find a way to draw the board in _every step of change_. "A step
 
 And so, once we alter our model to work in a "step-wise" fashion (which will soon be explained more clearly), our view part _easily_ reflects the board state to create a satisfiable user experience.
 
-The best way to model the board states would be with a deterministic finite automaton (DFA). The "Controller" manages the current state of the board and follows the following  DFA for the board states ("state of the model") :
+The best way to model the board states would be with a deterministic finite automaton (DFA). The "Controller" manages the current state of the board and follows the following  DFA for the board states ("state of the model"):
 
 __Pleaes note that this should accompany you when you review the code, otherwise it may be a bit hard to comprehend without relevant screenshots__ (_Which I plan to add later on_)
 
-![](http://i.imgur.com/74Y6lcA.png "DFA for bejeweled")
+![](http://i.imgur.com/74Y6lcA.png "DFA for Bejeweled")
 
 1. Uninitialized
   * Uninitialized state set by the controller.
