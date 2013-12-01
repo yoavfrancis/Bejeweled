@@ -7,11 +7,9 @@
 
 #include <SDL.h>
 #include <utility>
+#include "Point.h"
 
 namespace game {
-
-/// Represents a 2d point/coordinate. To be used by all classes in the namespace.
-typedef std::pair<int, int> Point;
 
 /**
  * Interface for a game object that can update, draw, handleEvents.

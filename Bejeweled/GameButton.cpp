@@ -9,11 +9,14 @@ namespace game {
 // Initialize default values constants
 const int GameButton::FONT_SIZE = 28;
 const string GameButton::FONT_PATH = "resources\\arial.ttf";
-const int GameButton::TEXT_OFFSET_X = 55;
+const int GameButton::TEXT_OFFSET_INITIAL = 55;
+const int GameButton::TEXT_OFFSET_TIMER = 75;
+const int GameButton::TEXT_OFFSET_GAMEOVER = 10;
+const int GameButton::TEXT_OFFSET_NOMOVES = 3;
 const int GameButton::TEXT_OFFSET_Y = 10;
 const std::string GameButton::TIMER_BUTTON_TEXT = "Start";
-const int GameButton::BUTTON_OFFSET_X = 45;
-const int GameButton::BUTTON_OFFSET_Y = 160;
+const int GameButton::BUTTON_OFFSET_X = 25;
+const int GameButton::BUTTON_OFFSET_Y = 260;
 const int GameButton::BUTTON_SIZE_X = 170;
 const int GameButton::BUTTON_SIZE_Y = 60;
 const SDL_Color GameButton::TIMER_TEXT_COLOR = {255, 255, 255};
@@ -38,7 +41,7 @@ GameButton::GameButton(int x, int y,  SDL_Surface* target, int w, int h, const s
     m_buttonColor(buttonBackgroundColor),
     m_fontSurface(NULL),
     m_buttonStatus(READY),
-    m_textOffsetX(TEXT_OFFSET_X)
+    m_textOffsetX(TEXT_OFFSET_INITIAL)
 {  
     if(!m_buttonSurface) {
         throw GameException();
@@ -51,7 +54,7 @@ void GameButton::handleEvent(SDL_Event* event) {
     if(!m_gameTimer.isStarted()) {
         m_gameTimer.start();
         m_buttonStatus = TIMER;
-        m_textOffsetX+=20;
+		m_textOffsetX = TEXT_OFFSET_TIMER;;
     }
 }
 
@@ -66,7 +69,7 @@ void GameButton::update() {
             m_gameTimer.stop();
             m_buttonStatus = GAMEOVER;
             setText("Game Over");
-            m_textOffsetX = 10;
+            m_textOffsetX = TEXT_OFFSET_GAMEOVER;
         }
     }
 }
@@ -114,7 +117,7 @@ void GameButton::notifyNoMoves() {
     m_gameTimer.stop();
     m_buttonStatus = NOMOVES;
     setText("No Moves!");
-    m_textOffsetX = 3;
+    m_textOffsetX = TEXT_OFFSET_NOMOVES;
 }
 
 } //namespace game

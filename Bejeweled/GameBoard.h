@@ -8,6 +8,7 @@
 #include <SDL.h>
 #include <string>
 #include "GameObject.h"
+#include "Point.h"
 #include "BoardView.h"
 #include "BoardModel.h"
 #include "TileViewFactory.h"

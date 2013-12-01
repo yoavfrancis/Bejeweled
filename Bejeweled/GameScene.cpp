@@ -6,7 +6,7 @@
 
 namespace game {
 
-const std::string GameScene::BACKGROUND_IMG = "resources\\Background.jpg";
+const std::string GameScene::BACKGROUND_IMG = "resources\\Background.png";
  
 GameScene::GameScene(int x, int y, SDL_Surface* target)
 : GameObject(x, y, target),
@@ -15,7 +15,7 @@ GameScene::GameScene(int x, int y, SDL_Surface* target)
   m_backgroundImage(m_resManager.loadImage(BACKGROUND_IMG)),
   m_gameBoard(new GameBoard(GameBoard::BOARD_OFFSET_X, GameBoard::BOARD_OFFSET_Y,
                             m_dstSurface,
-                            SurfaceProxy::getImageDimensions(GameBoard::TILE_BLUE_IMG).first+2)),
+                            SurfaceProxy::getImageDimensions(GameBoard::TILE_BLUE_IMG).first)),
   m_button(new GameButton(GameButton::BUTTON_OFFSET_X, GameButton::BUTTON_OFFSET_Y, m_dstSurface))
 {
     // Create the game board with the tile size of some tile (and some padding so tiles won't be too close)
@@ -52,7 +52,7 @@ void GameScene::update() {
 }
 
 void GameScene::draw() {
-    SurfaceProxy::draw(0,0, m_backgroundImage, m_dstSurface);
+    SurfaceProxy::draw(0, 0, m_backgroundImage, m_dstSurface);
     m_gameBoard->draw();
     m_button->draw();
 }

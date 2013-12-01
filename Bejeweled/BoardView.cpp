@@ -2,6 +2,7 @@
 #include "BoardView.h"
 #include "GameException.h"
 #include "GameObject.h"
+#include "Point.h"
 
 namespace game {
 

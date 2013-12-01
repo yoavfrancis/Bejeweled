@@ -103,6 +103,9 @@
     <ClInclude Include="TileViewFactory.h">
       <Filter>Header Files\View</Filter>
     </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\BackGround.jpg">

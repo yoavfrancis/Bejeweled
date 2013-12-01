@@ -2,6 +2,7 @@
 #include <SDL_image.h>
 #include <utility>
 #include <string>
+#include "Point.h"
 #include "SurfaceProxy.h"
 #include "GameException.h"
 

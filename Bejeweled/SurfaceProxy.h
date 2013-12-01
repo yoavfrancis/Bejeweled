@@ -8,7 +8,7 @@
 #include <utility>
 #include <string>
 #include "SDL.h"
-#include "GameObject.h"
+#include "Point.h"
 
 namespace game {
 

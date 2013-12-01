@@ -7,7 +7,7 @@
 
 #include <SDL.h>
 #include <map>
-#include "GameObject.h"
+#include "Point.h"
 #include "Drawable.h"
 #include "TileView.h"
 #include "TileViewFactory.h"

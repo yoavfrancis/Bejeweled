@@ -80,6 +80,7 @@
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="SelectedTileView.h" />
     <ClInclude Include="TileSequence.h" />
     <ClInclude Include="Drawable.h" />

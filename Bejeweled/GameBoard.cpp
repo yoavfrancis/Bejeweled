@@ -5,8 +5,8 @@ namespace game {
 
 const int GameBoard::NUM_ROWS = 8;
 const int GameBoard::NUM_COLS = 8;
-const int GameBoard::BOARD_OFFSET_X = 350;
-const int GameBoard::BOARD_OFFSET_Y = 120;
+const int GameBoard::BOARD_OFFSET_X = 241;
+const int GameBoard::BOARD_OFFSET_Y = 36;
 const string GameBoard::TILE_BLUE_IMG = "resources\\Blue.png";
 const string GameBoard::TILE_GREEN_IMG = "resources\\Green.png";
 const string GameBoard::TILE_PURPLE_IMG = "resources\\Purple.png";
@@ -99,10 +99,10 @@ void GameBoard::update() {
         if(!m_boardModel.swapTiles(m_prevSelectedTile.first, m_prevSelectedTile.second,
             m_selectedTile.first, m_selectedTile.second))
         {
-            //Unable to swap
+            // Unable to swap
             m_boardState = READY;
         } else {
-            /// Check if sequences were found after selection.
+            // Check if sequences were found after selection.
             if(!m_boardModel.hasSequences() || !m_boardModel.markAllSequencesOnBoard()) {
                 // No sequence found - switch model back to original state
                 m_boardModel.swapTiles(m_prevSelectedTile.first, m_prevSelectedTile.second,
