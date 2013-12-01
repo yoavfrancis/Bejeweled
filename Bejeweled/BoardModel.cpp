@@ -122,9 +122,6 @@ int BoardModel::getTileId(int row, int col) const {
     return m_grid[row][col];
 }
 
-
-
-
 bool BoardModel::hasMoreMoves() {
     bool hasMove = false;
     // Horizontal moves - pass on every column and switch each tile with the one to its right.
@@ -175,17 +172,6 @@ bool BoardModel::markAllSequencesOnBoard() {
         markSequenceOnBoard(*it);
     }
     return true;
-}
-
-bool BoardModel::hasSequences() const {
-    for (int i = 0; i < m_numRows; ++i) {
-        for (int j = 0; j < m_numCols; ++j) {
-            if (isBeginningOfSequence(i, j)) {
-                return true;
-            }
-        }
-    }
-    return false;
 }
 
 
@@ -310,6 +296,18 @@ bool BoardModel::isEndOfSequence(int i,int j) const {
 
 // UNUSED METHODS (for testing in a "non-stepwise" fashion)
 #if 0
+
+bool BoardModel::hasSequences() const {
+    for (int i = 0; i < m_numRows; ++i) {
+        for (int j = 0; j < m_numCols; ++j) {
+            if (isBeginningOfSequence(i, j)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 
 void BoardModel::stabilizeBoard() {
     while (markAllSequencesOnBoard()) {

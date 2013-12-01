@@ -103,13 +103,16 @@ void GameBoard::update() {
             m_boardState = READY;
         } else {
             // Check if sequences were found after selection.
-            if(!m_boardModel.hasSequences() || !m_boardModel.markAllSequencesOnBoard()) {
+            if(!m_boardModel.hasSequencesProximity(m_selectedTile.first, m_selectedTile.second) &&
+               !m_boardModel.hasSequencesProximity(m_prevSelectedTile.first, m_prevSelectedTile.second))
+            {      
                 // No sequence found - switch model back to original state
                 m_boardModel.swapTiles(m_prevSelectedTile.first, m_prevSelectedTile.second,
                     m_selectedTile.first, m_selectedTile.second);
                 m_boardState = READY;
             } else {
                 // Found some sequence(s) - gravitate the board
+                m_boardModel.markAllSequencesOnBoard();
                 m_boardState = GRAVITATE;
             }
         }

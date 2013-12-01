@@ -87,15 +87,17 @@ public:
     */
     bool markAllSequencesOnBoard();
 
-    /**
-    * Checks if the board has any sequences of at least length 3.
-    * This is a bit faster than calling markAllSequencesOnBoard,
-    * as we do not find the sequences themselves.
-    */
-    bool hasSequences() const;
-
     // The following are currently unused methods that perform the actions directly (and not in "steps")
 #if 0
+    /**
+     * Unused.
+     * Checks if the board has any sequences of at least length 3.
+     * This is a bit faster than calling markAllSequencesOnBoard,
+     * as we do not find the sequences themselves.
+     */
+    bool hasSequences() const;
+
+
     /**
      * Unused.
      * Gets the board to a stable state - finds all the sequences, removes them and gravitates the board,
