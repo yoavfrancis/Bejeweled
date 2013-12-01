@@ -4,7 +4,7 @@ This is my take on implementing the classical [Bejeweled](http://en.wikipedia.or
 
 Unlike many game implementations, I attempted to employ an object-oriented design to the game, using [MVC](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) and other approaches, making it very modular and an _easy-to-pickup_ code.
 
-![](http://i.imgur.com/0E9NY9A.png "In-game screenshot")
+[![](http://i.imgur.com/0E9NY9A.png)](http://youtu.be/LjQ1qV2Bpws)
 
 ### Compilation Prerequisites 
 
@@ -42,6 +42,11 @@ The project is licensed under GPLv2 (see LICENSE.MD)
 
 [Yoav Francis](www.linkedin.com/in/yoavfrancis)
 
+### Future todo's:
+
+- Add audio (with SDL_Audio)
+- Employ State pattern for different states (main menu, game screen, records screen, etc.)
+- Employ Strategy pattern for abstraction of game mechanics.
 
 -------
 
