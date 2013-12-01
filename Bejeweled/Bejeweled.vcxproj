@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{141FF2E2-0961-475E-B89D-C4764A5C03AA}</ProjectGuid>
-    <RootNamespace>KingProgrammingTest</RootNamespace>
+    <RootNamespace>Bejeweled</RootNamespace>
     <ProjectName>Bejeweled</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -52,6 +52,7 @@
       <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;SDL_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>C:\SDL\SDL-1.2.15\lib\x86;C:\SDL\SDL_ttf-2.0.11\lib\x86;C:\SDL\SDL_image-1.2.12\lib\x86</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

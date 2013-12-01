@@ -289,8 +289,8 @@ bool BoardModel::isBeginningOfSequence(int i, int j) const {
 
 
 bool BoardModel::isEndOfSequence(int i,int j) const {
-    return ((j<m_numCols && j>2 && m_grid[i][j-1] == m_grid[i][j] && m_grid[i][j-2] == m_grid[i][j]) ||
-            (i<m_numRows && i>2 && m_grid[i-1][j] == m_grid[i][j] && m_grid[i-2][j] == m_grid[i][j]));
+    return ((j<m_numCols && j>=2 && m_grid[i][j-1] == m_grid[i][j] && m_grid[i][j-2] == m_grid[i][j]) ||
+            (i<m_numRows && i>=2 && m_grid[i-1][j] == m_grid[i][j] && m_grid[i-2][j] == m_grid[i][j]));
 }
 
 
