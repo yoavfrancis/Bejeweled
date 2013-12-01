@@ -40,7 +40,7 @@ The project is licensed under GPLv2 (see LICENSE.MD)
 
 ### Author
 
-[Yoav Francis](www.linkedin.com/in/yoavfrancis)
+[Yoav Francis](https://www.linkedin.com/in/yoavfrancis)
 
 ### Future todo's:
 
