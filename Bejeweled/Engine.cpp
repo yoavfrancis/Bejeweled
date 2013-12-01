@@ -10,7 +10,7 @@
 namespace bejeweled {
 
 const int Engine::GAME_FPS = 10;
-const string Engine::WINDOW_TITLE = "Yoav Francis - Bejeweled";
+const string Engine::WINDOW_TITLE = "Bejeweled";
 const string Engine::ICON_IMG = "resources\\icon.ico";
 
 Engine::Engine() : m_gameIcon(NULL), m_screen(NULL), m_curScene(NULL) {
