@@ -53,7 +53,7 @@ The project is licensed under GPLv2 (see LICENSE.MD)
 Appendix -  Design Ideas
 ------------------
 
-I'll not delve into the code itself, but I'll try abstractly present the "algorithm" (Or to put more correctly, how the game works)
+I'll not delve into the code itself, but I'll try to abstractly present the "algorithm" (Or to put more correctly, how the game works)
 
 In putting the game to an [MVC](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) design, There arises the following problem : 
 
