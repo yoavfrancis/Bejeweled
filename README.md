@@ -2,7 +2,6 @@ Bejeweled
 ====================================
 
 This is my take on implementing the classical [Bejeweled](http://en.wikipedia.org/wiki/Bejeweled) / Match-3 game.
-
 This is written purely with [SDL 1.2](http://www.libsdl.org/) and C++, and thus should be portable. (I've yet to test it on OSX/Linux though)
 
 Unlike most implementations, I attempted to employ an object-oriented design to the game, using MVC and other approaches, making it very modular with an easy-to-pickup code
@@ -23,12 +22,10 @@ The provided solution file is of VS2013, but it can also be opened with VS2012. 
     - libfreetype-6.dll
     - SDL_ttf.dll
     - zlib1.dll
-
  - From SDL_image:
     - libjpeg-8.dll
     - libpng15-15.dll
     - SDL_image.dll
- 
  - From SDL:
     - SDL.dll
 
@@ -37,7 +34,14 @@ If you are having a hard time compiling/linking/running with SDL, do not hesitat
 ### Copyrights
 
 Graphical resources are courtesy of the [Freegemas](https://code.google.com/p/freegemas/) project, an open-source bejeweled version built on top of the [Gosu](http://www.libgosu.org/) library. (GNU GPL v2)
-All other 
+The project is licensed under GPLv2 (see LICENSE.MD)
+
+
+
+
+
+
+
 
 
 
