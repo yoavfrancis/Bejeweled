@@ -67,7 +67,7 @@ private:
     /// Origin axis of the board
     int m_originX, m_originY;
 
-	/// Mapping of locations on the grid to the tile being "selected"
+    /// Mapping of locations on the grid to the tile being "selected"
     std::map<Point, bool> m_selectedTiles;
 
     int m_tileHeight, m_tileWidth;

@@ -16,11 +16,11 @@ namespace game {
 class TileView : public Drawable
 {
 public:
-	/**
+    /**
      * Constructor
      * @param tileImg is the source surface of the tile. It is NOT to be freed by this class.
      */ 
-	TileView(SDL_Surface* tileImg);
+    TileView(SDL_Surface* tileImg);
 
     /// Empty ctor for empty tile
     TileView();
@@ -31,15 +31,15 @@ public:
     /// Assignment operator - does not duplicate surface
     TileView& operator=(const TileView&);
 
-	/// Destructor
-	virtual ~TileView();
+    /// Destructor
+    virtual ~TileView();
 
     /**
-	 * Draws the tile on the given positions
-	 * @param x Horizontal origin point
-	 * @param y Vertical origin point
+     * Draws the tile on the given positions
+     * @param x Horizontal origin point
+     * @param y Vertical origin point
      */
-	virtual void draw(SDL_Surface* dst, int x, int y) const;
+    virtual void draw(SDL_Surface* dst, int x, int y) const;
 
     /// Getters
     int getWidth() const;

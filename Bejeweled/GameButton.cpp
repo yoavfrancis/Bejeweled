@@ -54,7 +54,7 @@ void GameButton::handleEvent(SDL_Event* event) {
     if(!m_gameTimer.isStarted()) {
         m_gameTimer.start();
         m_buttonStatus = TIMER;
-		m_textOffsetX = TEXT_OFFSET_TIMER;;
+        m_textOffsetX = TEXT_OFFSET_TIMER;;
     }
 }
 

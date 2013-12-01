@@ -19,13 +19,13 @@ BoardView::~BoardView() {
 }
 
 void BoardView::draw(SDL_Surface* dst, int x, int y) const {
-	for(int j=0; j<m_numCols; ++j) {
+    for(int j=0; j<m_numCols; ++j) {
         for(int i=0; i<m_numRows; ++i) {
-			m_tileDrawer.drawTile(dst,
-								  m_originX + j*m_tileWidth,
-								  m_originY + i*m_tileHeight,
-								  m_boardModel.getTileId(i, j),
-								  isTileSelected(i,j));
+            m_tileDrawer.drawTile(dst,
+                                  m_originX + j*m_tileWidth,
+                                  m_originY + i*m_tileHeight,
+                                  m_boardModel.getTileId(i, j),
+                                  isTileSelected(i,j));
         }
     }
 }

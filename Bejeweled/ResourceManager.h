@@ -22,7 +22,6 @@ using std::string;
 class ResourceManager
 {
 public:
-    // Allow creation only for inherited singletons (aka subclassed resource managers)
     ResourceManager();
 
     /// frees all the loaded images within the context of this manager instance

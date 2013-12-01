@@ -19,24 +19,24 @@ namespace game {
 class TileViewDrawer
 {
 public:
-	TileViewDrawer();
+    TileViewDrawer();
 
     /// Adds a new SDL_Surface to the available tile images collection
     void addAvailableTileImage(SDL_Surface* img);
-	
-	/// Draws the tile by the given id on top onto the given SDL_Surface
-	void drawTile(SDL_Surface* dst, int x, int y, int id, int isSelected = false) const;
+    
+    /// Draws the tile by the given id on top onto the given SDL_Surface
+    void drawTile(SDL_Surface* dst, int x, int y, int id, int isSelected = false) const;
 
     /// This of course works assuming that all tiles are of same dimensions.
     int getTileWidth() const;
     int getTileHeight() const;
 
 private:
-	/// Since we are dealing with limited small amount of possible tile colors, we'll just hold them in containers
-	/// instead of generating them upon every draw call.
-	std::vector<SelectedTileView> m_selectedTileViews;
-	std::vector<TileView> m_tileViews;
-	TileView m_emptyTile;
+    /// Since we are dealing with limited small amount of possible tile colors, we'll just hold them in containers
+    /// instead of generating them upon every draw call.
+    std::vector<SelectedTileView> m_selectedTileViews;
+    std::vector<TileView> m_tileViews;
+    TileView m_emptyTile;
 
 }; // class TileViewDrawer
 

@@ -28,10 +28,10 @@ public:
     static const int FONT_SIZE;
     static const string FONT_PATH;
     static const int TEXT_OFFSET_INITIAL;
-	static const int TEXT_OFFSET_TIMER;
-	static const int TEXT_OFFSET_GAMEOVER;
-	static const int TEXT_OFFSET_NOMOVES;
-	static const int TEXT_OFFSET_Y;
+    static const int TEXT_OFFSET_TIMER;
+    static const int TEXT_OFFSET_GAMEOVER;
+    static const int TEXT_OFFSET_NOMOVES;
+    static const int TEXT_OFFSET_Y;
     static const string TIMER_BUTTON_TEXT;
     static const int BUTTON_OFFSET_X;
     static const int BUTTON_OFFSET_Y;
