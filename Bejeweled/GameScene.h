@@ -27,12 +27,8 @@ public:
     /// Constructor
     GameScene(int x, int y, SDL_Surface* target = NULL);
 
-    /**
-     * destructor - while it is still virtual (due to being defined as such in GameObject), 
-     * not writing so signifies that the class should not be inherited. 
-     * (Since the class frees the inherited destination surface - that is, the screen itself)
-     */
-    ~GameScene();
+    /// Destructor
+    virtual ~GameScene();
 
     /// Indicates if the game is over
     bool isGameover() const;
@@ -51,6 +47,7 @@ private:
     /// Indicates if the game over
     bool m_isGameover;
 
+    /// Resource manager for background image and music
     ResourceManager m_resManager;
 
     /// Represents the game screens
@@ -61,8 +58,8 @@ private:
     Mix_Music* m_music;
 
     /// Objects on the game screen
-    GameBoard* m_gameBoard;
-    GameButton* m_button;
+    GameBoard m_gameBoard;
+    GameButton m_button;
 }; // class GameScene
 
 } // namespace bejeweled
