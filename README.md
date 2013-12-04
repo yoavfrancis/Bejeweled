@@ -4,7 +4,7 @@ This is my take on implementing the classical [Bejeweled](http://en.wikipedia.or
 
 Unlike many game implementations, I attempted to employ an object-oriented design to the game, using [MVC](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) and other approaches, making it very modular and an _easy-to-pickup_ code.
 
-[![](http://i.imgur.com/0E9NY9A.png)](http://youtu.be/LjQ1qV2Bpws)
+[![](http://i.imgur.com/0E9NY9A.png)](http://youtu.be/vLgxC8o44g8)
 
 ### Compilation Prerequisites 
 
@@ -16,6 +16,7 @@ The provided solution file is of VS2013, but it can also be opened with VS2012. 
  - [SDL 1.2.15](http://www.libsdl.org/release/SDL-devel-1.2.15-VC.zip)
  - [SDL\_ttf 2.0.11](http://www.libsdl.org/projects/SDL_ttf/release/SDL_ttf-devel-2.0.11-VC.zip) 
  - [SDL\_image 1.2.12](http://www.libsdl.org/projects/SDL_image/release/SDL_image-devel-1.2.12-VC.zip)
+ - [SDL\_mixer 1.2.12](http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-devel-1.2.12-VC.zip)
  - The VS project is configured to look for the headers/libraries in matching subdirectories under C:\SDL - but you can change it in the project properties.
 
 - You also need to have the following DLL's in your project directory (files are available in the above packages)
@@ -27,6 +28,11 @@ The provided solution file is of VS2013, but it can also be opened with VS2012. 
     - libjpeg-8.dll
     - libpng15-15.dll
     - SDL_image.dll
+- From SDL_mixer
+    - SDL_mixer.dll
+	- libvorbis-0.dll
+	- libvorbis-0.dll
+	- libogg-0.dll
  - From SDL:
     - SDL.dll
 
@@ -34,9 +40,9 @@ If you are having a hard time compiling/linking/running with SDL, do not hesitat
 
 ### Copyrights
 
-Graphical resources are courtesy of the [Freegemas](https://code.google.com/p/freegemas/) project, an open-source bejeweled version built on top of the [Gosu](http://www.libgosu.org/) library (GNU GPL v2).
-
-The project is licensed under GPLv2 (see LICENSE.MD)
+Graphical resources and sound effects are courtesy of the [Freegemas](https://code.google.com/p/freegemas/) project, an open-source Bejeweled version built on top of the [Gosu](http://www.libgosu.org/) library (GNU GPL v2).
+Background music(_A Conversation with Saul (Jazz/Blues Shuffle)_) by [Matthew Pablo](http://opengameart.org/content/a-conversation-with-saul-jazzblues-shuffle) (CC-BY 3.0)
+Rest of the project is licensed under GPLv2 (see LICENSE.MD)
 
 ### Author
 
@@ -44,7 +50,6 @@ The project is licensed under GPLv2 (see LICENSE.MD)
 
 ### Future todo's:
 
-- Add audio (with SDL_Audio)
 - Employ State pattern for different states (main menu, game screen, records screen, etc.)
 - Employ Strategy pattern for abstraction of game mechanics.
 

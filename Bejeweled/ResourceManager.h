@@ -9,6 +9,7 @@
 #include <string>
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 
 namespace bejeweled {
 
@@ -45,6 +46,19 @@ public:
      */
     TTF_Font* loadFont(const string& path, int size);
 
+    /**
+     * Loads a music file and saves it to the music files vector, to be freed upon class destruction.
+     * Music file path should be a local path.
+     */
+    Mix_Music* loadMusic(const string& path);
+
+    /**
+     * Loads a music effect file and saves it to the effects files vector, to be freed upon class destruction.
+     * Effect file path should be a local path.
+     */
+    Mix_Chunk* loadEffect(const string& path);
+
+
 private:
 
     /// Prevent Copying and Assignment
@@ -53,6 +67,8 @@ private:
 
     std::vector<SDL_Surface*> m_surfaces;
     std::vector<TTF_Font*> m_fonts;
+    std::vector<Mix_Music*> m_music;
+    std::vector<Mix_Chunk*> m_effects;
 
 }; // class ResourceManager
 

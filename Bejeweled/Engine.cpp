@@ -1,11 +1,13 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include "Engine.h"
 #include "GameObject.h"
 #include "SurfaceProxy.h"
 #include "GameException.h"
 #include "GameScene.h"
+#include "Point.h"
 
 namespace bejeweled {
 
@@ -15,7 +17,7 @@ const string Engine::ICON_IMG = "resources\\icon.ico";
 
 Engine::Engine() : m_gameIcon(NULL), m_screen(NULL), m_curScene(NULL) {
     /// Initialize SDL subsystems.
-    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) ||  !IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) || TTF_Init()) {
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) ||  !IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) || TTF_Init()) {
         throw GameException();
     }
     
@@ -28,17 +30,30 @@ Engine::Engine() : m_gameIcon(NULL), m_screen(NULL), m_curScene(NULL) {
     SDL_WM_SetCaption(WINDOW_TITLE.c_str(),NULL);
     #endif
 
-    /// Software rendering as this is a simple game. Can use hardware+doublebuf instead.
+    // Software rendering as this is a simple game. Can use hardware+doublebuf instead.
     m_screen = SDL_SetVideoMode(backgroundDimensions.first, backgroundDimensions.second, 32,  SDL_SWSURFACE);
     if(!m_screen) {
         throw GameException();
     }
+
+    // Allow playing ogg audio files.
+    if(!Mix_Init(MIX_INIT_OGG)) {
+        throw GameException();
+    }
+
+    // Initialize SDL_mixer
+    if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096) == -1) {
+        throw GameException();
+    }
+
     m_fpsTimer.start();
 }
 
 Engine::~Engine() {
     delete m_curScene;
     SDL_FreeSurface(m_screen);
+    Mix_Quit();
+    Mix_CloseAudio();
     TTF_Quit();
     SDL_Quit();
 }

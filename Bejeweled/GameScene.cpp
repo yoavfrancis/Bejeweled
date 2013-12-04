@@ -7,12 +7,14 @@
 namespace bejeweled {
 
 const std::string GameScene::BACKGROUND_IMG = "resources\\Background.png";
- 
+const std::string GameScene::BACKGROUND_MUSIC = "resources\\music.ogg";
+
 GameScene::GameScene(int x, int y, SDL_Surface* target)
 : GameObject(x, y, target),
   m_isGameover(false),
   m_resManager(),
   m_backgroundImage(m_resManager.loadImage(BACKGROUND_IMG)),
+  m_music(m_resManager.loadMusic(BACKGROUND_MUSIC)),
   m_gameBoard(new GameBoard(GameBoard::BOARD_OFFSET_X, GameBoard::BOARD_OFFSET_Y,
                             m_dstSurface,
                             SurfaceProxy::getImageDimensions(GameBoard::TILE_BLUE_IMG).first)),
@@ -41,6 +43,7 @@ void GameScene::update() {
         GameBoard::BoardState curBoardState = m_gameBoard->getBoardState();
         if(curBoardState == GameBoard::FREEZE) {
             m_gameBoard->notifyPlayable();
+            Mix_PlayMusic(m_music, -1); // Play the music
         } else if(curBoardState == GameBoard::NO_MOVES) {
             m_button->notifyNoMoves();
         }
@@ -48,6 +51,7 @@ void GameScene::update() {
         m_gameBoard->update();
     } else if(buttonStatus == GameButton::GAMEOVER || buttonStatus == GameButton::NOMOVES) {
         m_isGameover = true;
+        //Mix_HaltMusic(); - To stop the music from playing upon "game over".
     }
 }
 

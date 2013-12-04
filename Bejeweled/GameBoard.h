@@ -6,6 +6,7 @@
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
 #include <SDL.h>
+#include <SDL_mixer.h>
 #include <string>
 #include "GameObject.h"
 #include "Point.h"
@@ -33,6 +34,8 @@ public:
     static const string TILE_PURPLE_IMG;
     static const string TILE_RED_IMG;
     static const string TILE_YELLOW_IMG;
+    static const string EFFECT_SELECTION;
+    static const string EFFECT_MATCH;
     static const int NUM_COLORS;
 
     enum BoardState {UNINITIALIZED, FREEZE, READY, SELECT1, WAIT_SELECT2, SELECT2,
@@ -76,6 +79,8 @@ private:
     BoardView m_boardView;
     ResourceManager m_resManager;
     Point m_selectedTile, m_prevSelectedTile;
+    Mix_Chunk* m_effectSelection;
+    Mix_Chunk* m_effectMatch;
 }; // class GameBoard
 
 } // namespace bejeweled

@@ -20,8 +20,9 @@ namespace bejeweled {
 class GameScene : public GameObject
 {
 public:
-    /// The path to the background image
+    /// The path to the background image and to the music
     static const std::string BACKGROUND_IMG;
+    static const std::string BACKGROUND_MUSIC;
 
     /// Constructor
     GameScene(int x, int y, SDL_Surface* target = NULL);
@@ -55,6 +56,9 @@ private:
     /// Represents the game screens
     SDL_Surface* message;
     SDL_Surface* m_backgroundImage;
+
+    /// Background music
+    Mix_Music* m_music;
 
     /// Objects on the game screen
     GameBoard* m_gameBoard;
