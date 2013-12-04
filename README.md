@@ -28,7 +28,7 @@ The provided solution file is of VS2013, but it can also be opened with VS2012. 
     - libjpeg-8.dll
     - libpng15-15.dll
     - SDL_image.dll
-- From SDL_mixer
+ - From SDL_mixer:
     - SDL_mixer.dll
 	- libvorbis-0.dll
 	- libvorbis-0.dll
