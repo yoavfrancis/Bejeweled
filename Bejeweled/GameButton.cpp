@@ -8,7 +8,7 @@ namespace bejeweled {
 
 // Initialize default values constants
 const int GameButton::FONT_SIZE = 28;
-const string GameButton::FONT_PATH = "resources\\arial.ttf";
+const string GameButton::FONT_PATH = "resources/arial.ttf";
 const int GameButton::TEXT_OFFSET_INITIAL = 55;
 const int GameButton::TEXT_OFFSET_TIMER = 75;
 const int GameButton::TEXT_OFFSET_GAMEOVER = 10;

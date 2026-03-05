@@ -9,13 +9,13 @@ const int GameBoard::NUM_ROWS = 8;
 const int GameBoard::NUM_COLS = 8;
 const int GameBoard::BOARD_OFFSET_X = 241;
 const int GameBoard::BOARD_OFFSET_Y = 36;
-const string GameBoard::TILE_BLUE_IMG = "resources\\Blue.png";
-const string GameBoard::TILE_GREEN_IMG = "resources\\Green.png";
-const string GameBoard::TILE_PURPLE_IMG = "resources\\Purple.png";
-const string GameBoard::TILE_RED_IMG = "resources\\Red.png";
-const string GameBoard::TILE_YELLOW_IMG = "resources\\Yellow.png";
-const string GameBoard::EFFECT_SELECTION = "resources\\select.ogg";
-const string GameBoard::EFFECT_MATCH = "resources\\match.ogg";
+const string GameBoard::TILE_BLUE_IMG = "resources/Blue.png";
+const string GameBoard::TILE_GREEN_IMG = "resources/Green.png";
+const string GameBoard::TILE_PURPLE_IMG = "resources/Purple.png";
+const string GameBoard::TILE_RED_IMG = "resources/Red.png";
+const string GameBoard::TILE_YELLOW_IMG = "resources/Yellow.png";
+const string GameBoard::EFFECT_SELECTION = "resources/select.ogg";
+const string GameBoard::EFFECT_MATCH = "resources/match.ogg";
 const int GameBoard::NUM_COLORS = 5;
 
 GameBoard::GameBoard(int tileSize) 
