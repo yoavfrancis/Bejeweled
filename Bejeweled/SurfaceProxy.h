@@ -47,6 +47,17 @@ public:
      */
     static Point getImageDimensions(const string& path);
 
+    /**
+     * Applies an anaglyph (red-cyan) 3D effect by pixel-combining src into dst.
+     * The left eye (red channel) is taken from src shifted right by 'shift' pixels.
+     * The right eye (cyan: green+blue channels) is taken from src shifted left by 'shift' pixels.
+     * View the output with red-cyan 3D glasses for a stereoscopic depth effect.
+     * @param src  The rendered frame to process (read-only).
+     * @param dst  The screen surface to write the anaglyph result into.
+     * @param shift Horizontal pixel shift for the stereo separation (default: 5).
+     */
+    static void applyAnaglyph3D(SDL_Surface* src, SDL_Surface* dst, int shift = 5);
+
 private:
     // Prevent Creation, Copying and Assignment
     SurfaceProxy();

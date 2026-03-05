@@ -44,6 +44,7 @@ private:
 
     SDL_Surface* m_gameIcon;
     SDL_Surface* m_screen;
+    SDL_Surface* m_renderTarget;  ///< Off-screen render target for anaglyph 3D post-processing
     Timer m_fpsTimer;
 
     /// The current object/state to be displayed on the screen. (introduction screen/game screen/main menu)

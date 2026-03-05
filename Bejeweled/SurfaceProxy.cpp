@@ -49,6 +49,48 @@ void SurfaceProxy::draw(int x, int y, SDL_Surface* src, SDL_Surface* dst, SDL_Re
     }
 }
 
+void SurfaceProxy::applyAnaglyph3D(SDL_Surface* src, SDL_Surface* dst, int shift) {
+    if (!src || !dst) {
+        throw GameException("Must apply anaglyph to/from non-null surfaces.");
+    }
+
+    SDL_LockSurface(src);
+    SDL_LockSurface(dst);
+
+    int w = dst->w;
+    int h = dst->h;
+
+    for (int y = 0; y < h; y++) {
+        Uint32* srcRow = (Uint32*)((Uint8*)src->pixels + y * src->pitch);
+        Uint32* dstRow = (Uint32*)((Uint8*)dst->pixels + y * dst->pitch);
+
+        for (int x = 0; x < w; x++) {
+            Uint8 r = 0, g = 0, b = 0;
+            Uint8 lr, lg, lb, rr, rg, rb;
+
+            // Left eye: red channel, source shifted right by 'shift' pixels
+            int leftX = x + shift;
+            if (leftX >= 0 && leftX < src->w) {
+                SDL_GetRGB(srcRow[leftX], src->format, &lr, &lg, &lb);
+                r = lr;
+            }
+
+            // Right eye: green+blue channels, source shifted left by 'shift' pixels
+            int rightX = x - shift;
+            if (rightX >= 0 && rightX < src->w) {
+                SDL_GetRGB(srcRow[rightX], src->format, &rr, &rg, &rb);
+                g = rg;
+                b = rb;
+            }
+
+            dstRow[x] = SDL_MapRGB(dst->format, r, g, b);
+        }
+    }
+
+    SDL_UnlockSurface(dst);
+    SDL_UnlockSurface(src);
+}
+
 Point SurfaceProxy::getImageDimensions(const string& path) {
     SDL_Surface* loadedImg = IMG_Load(path.c_str());
     if(!loadedImg) {
