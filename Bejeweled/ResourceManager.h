@@ -5,7 +5,7 @@
 #pragma once
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-#include <Vector>
+#include <vector>
 #include <string>
 #include <SDL.h>
 #include <SDL_ttf.h>

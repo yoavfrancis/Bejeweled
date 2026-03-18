@@ -6,6 +6,8 @@
 
 namespace bejeweled {
 
+const int BoardModel::EMPTY_TILE;
+
 BoardModel::BoardModel(int numRows, int numCols, int numTileTypes)
 : m_numRows(numRows), m_numCols(numCols), m_numTileTypes(numTileTypes), m_grid(numRows, numCols, EMPTY_TILE)
 {

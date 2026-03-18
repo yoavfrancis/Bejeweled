@@ -13,9 +13,9 @@ namespace bejeweled {
 
 const int Engine::GAME_FPS = 10;
 const string Engine::WINDOW_TITLE = "Bejeweled";
-const string Engine::ICON_IMG = "resources\\icon.ico";
+const string Engine::ICON_IMG = "resources/icon.ico";
 
-Engine::Engine() : m_gameIcon(NULL), m_screen(NULL), m_curScene(NULL) {
+Engine::Engine() : m_gameIcon(NULL), m_screen(NULL), m_renderTarget(NULL), m_curScene(NULL) {
     /// Initialize SDL subsystems.
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) ||  !IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) || TTF_Init()) {
         throw GameException();
@@ -36,6 +36,15 @@ Engine::Engine() : m_gameIcon(NULL), m_screen(NULL), m_curScene(NULL) {
         throw GameException();
     }
 
+    // Create an off-screen render target for anaglyph 3D post-processing.
+    m_renderTarget = SDL_CreateRGBSurface(SDL_SWSURFACE,
+        m_screen->w, m_screen->h, 32,
+        m_screen->format->Rmask, m_screen->format->Gmask,
+        m_screen->format->Bmask, m_screen->format->Amask);
+    if(!m_renderTarget) {
+        throw GameException();
+    }
+
     // Allow playing ogg audio files.
     if(!Mix_Init(MIX_INIT_OGG)) {
         throw GameException();
@@ -51,6 +60,7 @@ Engine::Engine() : m_gameIcon(NULL), m_screen(NULL), m_curScene(NULL) {
 
 Engine::~Engine() {
     delete m_curScene;
+    SDL_FreeSurface(m_renderTarget);
     SDL_FreeSurface(m_screen);
     Mix_Quit();
     Mix_CloseAudio();
@@ -59,8 +69,9 @@ Engine::~Engine() {
 }
 
 void Engine::run() {
-    // Set current scene to the game scene (we only have one scene in this game)
-    m_curScene = new GameScene(0, 0, m_screen);
+    // Set current scene to the game scene (we only have one scene in this game).
+    // Render into m_renderTarget so the anaglyph post-process can write to m_screen.
+    m_curScene = new GameScene(0, 0, m_renderTarget);
     if(!m_curScene) {
         throw GameException();
     }
@@ -91,6 +102,9 @@ void Engine::run() {
 
         m_curScene->update();
         m_curScene->draw();
+
+        // Apply anaglyph 3D: combine m_renderTarget into m_screen with red-cyan channel separation.
+        SurfaceProxy::applyAnaglyph3D(m_renderTarget, m_screen);
 
         if(SDL_Flip(m_screen)) {
             throw GameException();
